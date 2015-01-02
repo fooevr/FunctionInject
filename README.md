@@ -71,7 +71,7 @@ console.log('result:' + mickey.setFullName('mickey mouse'));
 ```
 
 ##callbackInject
-**now target function's last argument as callback function(if it's Function type)**
+**:bangbang:now target function's last argument as callback function(if it's type of Function)**
 
 ###1. execute script before callback invoke
 your can execute custom script before the function's invoker callback function invoke
