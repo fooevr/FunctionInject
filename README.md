@@ -6,7 +6,7 @@ Inject your script to any function before or after this function execute, or inj
 * You can change function's(and callback function) argument and result.
 * You can cancel function execute.
 
-#Sample
+##Sample
 define a function named setFullName, get a fullName argument, print it, use as callback's argument and return it.
 ```Node
 var funcInject = require("./script/funcInject");
@@ -21,8 +21,8 @@ mouse.prototype.setFullName = function(fullName, callback){
     return this.fullName;
 };
 ```
-##preInject
-###1. execute custom script before the function execute
+###preInject
+####1. execute custom script before the function execute
 ```Node
 funcInject.funcPreInject(mouse, 'setFullName',function(){
         console.log('injected');
@@ -30,7 +30,7 @@ funcInject.funcPreInject(mouse, 'setFullName',function(){
 var mickey = new mouse();
 console.log('result:' + mickey.setFullName('mickey mouse'));
 ```
-###2. change the argument before the function execute
+####2. change the argument before the function execute
 ```Node
 funcInject.funcPreInject(mouse, 'setFullName', function(fullNameObj){
     console.log('injected');
@@ -39,7 +39,7 @@ funcInject.funcPreInject(mouse, 'setFullName', function(fullNameObj){
 var mickey = new mouse();
 console.log('result:' + mickey.setFullName('mickey mouse'));
 ```
-###3. execute script and cancel execute the function's script 
+####3. execute script and cancel execute the function's script 
 execute custom script, return custom result and calcel execute the function's script
 ```Node
 funcInject.funcPreInject(mouse, 'setFullName', function(fullNameObj){
@@ -50,8 +50,8 @@ var mickey = new mouse();
 console.log('result:' + mickey.setFullName('mickey mouse'));
 ```
 
-##sufInject
-###1. get function's result value
+###sufInject
+####1. get function's result value
 ```Node
 funcInject.funcSufInject(mouse, 'setFullName', function(resultObj){
         console.log('injected, result:' + resultObj.value);
@@ -59,7 +59,7 @@ funcInject.funcSufInject(mouse, 'setFullName', function(resultObj){
 var mickey = new mouse();
 console.log('result:' + mickey.setFullName('mickey mouse'));
 ```
-###2. change function's result
+####2. change function's result
 change the function's result value before function's invoker get it
 ```Node
 funcInject.funcSufInject(mouse, 'setFullName', function(oldResult){
@@ -70,10 +70,10 @@ var mickey = new mouse();
 console.log('result:' + mickey.setFullName('mickey mouse'));
 ```
 
-##callbackInject
+###callbackInject
 **:bangbang:now target function's last argument as callback function(if it's type of Function)**
 
-###1. execute script before callback invoke
+####1. execute script before callback invoke
 your can execute custom script before the function's invoker callback function invoke
 ```Node
 callbackInject.inject(mouse, 'setFullName', function(fullNameObj){
@@ -84,7 +84,7 @@ console.log('result:' + mickey.setFullName('mickey mouse',function(fullName){
     console.log('callback argument:'+ fullName);
 }));
 ```
-###2. change callback's arguments
+####2. change callback's arguments
 ```Node
 callbackInject.inject(mouse, 'setFullName', function(fullNameObj){
     console.log('Injected callback argument:'+ fullNameObj.value);
@@ -96,4 +96,4 @@ console.log('result:' + mickey.setFullName('mickey mouse',function(fullName){
 }));
 ```
 TOTO:  
-* 
+* mutil callback support
