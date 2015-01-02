@@ -1,5 +1,3 @@
-<span style="color:orange;">Word up</span>
-
 #FunctionInject
 ==============
 Inject your script to any function before or after this function execute, or inject your script to any function's callback.
@@ -73,7 +71,8 @@ console.log('result:' + mickey.setFullName('mickey mouse'));
 ```
 
 ##callbackInject
-<font color="red">now target function's last argument as callback function(if it's Function type)</font>
+** now target function's last argument as callback function(if it's Function type) **
+
 ###1. execute script before callback invoke
 your can execute custom script before the function's invoker callback function invoke
 ```Node
