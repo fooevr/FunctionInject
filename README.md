@@ -1,6 +1,7 @@
 #FunctionInject
 ==============
 Inject your script to any function before or after this function execute, or inject your script to any function's callback.
+##Feature
 * You can catch function's argument before execute, catch function's result after execute and before it's invoke function get it.
 * You can change function's(and callback function) argument and result.
 * You can cancel function execute.
